@@ -18,18 +18,17 @@ void bubbleSort(int arr[], int relArr[], int size)
     }
 }
 
-vector<int> scheduleJobs(int job[], int deadline[], int n)
+vector<int> scheduleJobs(int job[], int deadline[], int totalJobs)
 {
-    bubbleSort(job, deadline, 5);
-
+    bubbleSort(job, deadline, totalJobs);
     vector<int> result; // To store result
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < totalJobs; i++)
     {
-        result.push_back(-1); // Initialising slot position with -1
+        result.push_back(-1); // Initialising slot position with -1 ; where -1 signifies empty place
     }
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < totalJobs; i++)
     {
         int j = deadline[i];
 
@@ -58,12 +57,26 @@ void display(vector<int> arr)
     }
 }
 
+void input(int arr[], int size) {
+    for(int i = 0; i < size; i++) {
+        cin>>arr[i];
+    }
+}
+
 int main()
-{
-    int job[5] = {3, 2, 4, 6, 7};
-    int deadline[5] = {1, 2, 3, 4, 5};
-    int n = 5;
-    vector<int> result = scheduleJobs(job, deadline, 5);
+{   int totalJobs;
+    cout<<"Enter total number of jobs: ";
+    cin >> totalJobs;
+    
+    int job[totalJobs], deadline[5];
+
+    cout<<"Enter jobs: ";
+    input(job, totalJobs);
+    
+    cout<<"Enter deadlines: ";
+    input(deadline, totalJobs);
+
+    vector<int> result = scheduleJobs(job, deadline, totalJobs);
     display(result);
 
     return 0;
