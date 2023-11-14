@@ -27,11 +27,11 @@ void display(vector<int> arr) {
 
 vector<int> countingSort(vector<int>& unsorted, int range) {
     // Create a count array to store the frequency of each element.
-    vector<int> countArr;
+    vector<int> countArr(range + 1);
     vector<int> sorted(unsorted.size());
 
     for(int i = 0; i <= range; i++) {
-        countArr.push_back(0);                        // initialising counts to 0
+        countArr[i] = 0;                        // initialising counts to 0
     }                                                 // to countArr whose size is range
 
     for(int i = 0; i < unsorted.size(); i++) {
@@ -46,8 +46,8 @@ vector<int> countingSort(vector<int>& unsorted, int range) {
     countArr.pop_back();
 
     for(int i = 0; i < unsorted.size(); i++) {        // iterating to all element of unsorted element array and checking the countArr for index
-        int currentElement = unsorted[i];
-        int index = countArr[currentElement];
+        int currentElement = unsorted[i];   // 3
+        int index = countArr[currentElement];  // 4
 
         sorted[index] = currentElement;
         countArr[currentElement]++;
@@ -63,7 +63,7 @@ int main() {
     cin>>numOfElements;
 
     vector<int> arr(numOfElements);                 //initialising array of a certain size
-    
+
     cout<<"Enter elements: ";
     input(arr);
     int range = findMax(arr);                       //getting range
