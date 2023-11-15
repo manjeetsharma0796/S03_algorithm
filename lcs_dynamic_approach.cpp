@@ -5,23 +5,15 @@
 #include <string>
 using namespace std;
 
-void display(int arr[][6])
-{
-}
-
 int LCS_DP(string A, string B, int m, int n)
 {
     int dp[m + 1][n + 1];
 
     for (int i = 0; i <= m; i++)
-    {
         dp[i][0] = 0;
-    }
 
     for (int j = 0; j <= n; j++)
-    {
         dp[0][j] = 0;
-    }
 
     for (int i = 1; i <= n; i++)                    // n 2
     {                                               // m 4
@@ -55,7 +47,7 @@ int main()
     int m = A.length();
     int n = B.length();
 
-    cout << "Longest Subsequence: " << LCS_DP(A, B, m, n) << endl;
+    cout << "Longest Subsequence: " << LCS_DP(A, B, m, n);      //expecting a number
 
     return 0;
 }
