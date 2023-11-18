@@ -6,7 +6,7 @@ vector<int> board;
 vector<int> col;
 vector<int> ld;
 vector<int> rd;
-int N;
+int N;            // board size
 
 bool placeQueen(int i) {
     for(int j = 1; j <= N; j++) {
@@ -55,7 +55,7 @@ int main() {
   assign(ld, 2 * N - 1);
   assign(rd, 2 * N - 1);
 
-  while(placeQueen(1) == false){}
+  placeQueen(1);
   cout<<"Queens are placed in following columns: ";
   display(board);
   
