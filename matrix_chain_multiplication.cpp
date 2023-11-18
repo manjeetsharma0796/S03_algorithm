@@ -3,10 +3,9 @@
 #include<vector>
 using namespace std;
 void display(vector<vector<int>> arr) {
-    for (int i = 1; i < arr.size(); i++) {        // this is a customized which starts from 1
-        for (int j = 1; j < arr[i].size(); j++) {        // this is a customized which starts from 1
+    for (int i = 1; i < arr.size(); i++) {         // this is a customized which starts from 1
+        for (int j = 1; j < arr[i].size(); j++)        // this is a customized which starts from 1
             cout<<arr[i][j]<<" ";
-        }
         cout<<endl;
     }
 }
@@ -48,8 +47,17 @@ void matrixChainOrder(int p[], int size) {
 }
 
 int main() {
-    int arr[] = {10, 100, 20, 5, 10};
-    matrixChainOrder(arr, 5);
+    int size;
+    cout<<"Enter number of elements: ";
+    cin>>size;
+
+    int arr[size];
+
+    for(int i = 0; i < size; i++) {
+        cin>>arr[i];
+    }
+    // int arr[] = {10, 100, 20, 5, 10};
+    matrixChainOrder(arr, size);
 
     return 0;
 }
