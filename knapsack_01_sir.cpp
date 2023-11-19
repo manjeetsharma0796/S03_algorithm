@@ -7,7 +7,7 @@ int wt[5] = {0, 2, 3, 4, 5};
 int m = 8, n = 4;
 int v[5][10];
 
-void knapsack(int n, int m)
+int knapsack(int n, int m)
 {
     for (int i = 0; i <= n; i++)
     {
@@ -27,11 +27,11 @@ void knapsack(int n, int m)
             }
         }
     }
-    cout << v[n][m];
+    return v[n][m];
 }
 
 int main()
 {
-    knapsack(n, m);
+    cout<<"The max profit: "<<knapsack(n, m);
     return 0;
 }
